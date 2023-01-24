@@ -29,7 +29,7 @@ export class ModalComponent implements OnInit {
         reader.onloadend = function() {
           const pimg:any=document.getElementById("print-image")
           pimg.src=reader.result
-          console.log(pimg);
+        //   console.log(pimg);
         }
         reader.readAsDataURL(file);
         })

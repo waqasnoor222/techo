@@ -56,16 +56,27 @@ description_data:any={}
   
   
     this.description_data['Exceeded daily driving time of 9 h']= 'assets/Exceeded-daily-driving-time-of-9-h.png'
+    this.description_data['Superato tempo di guida giornaliero oltre le 9 h']= 'assets/Exceeded-daily-driving-time-of-9-h.png'
     this.description_data['Exceeded extended daily driving time of 10 h']='assets/Exceeded-extended-daily-driving-time-of-10-h-.png'
+    this.description_data['Tempo di guida straordinario giornaliero oltre le 10 h']='assets/Exceeded-extended-daily-driving-time-of-10-h-.png'
     this.description_data['Exceeded weekly driving time of 56 h']='assets/Exceeded-weekly-driving-time-of-56-h-.png'
+    this.description_data['Superato tempo di guida settimanale oltre le  56 h']='assets/Exceeded-weekly-driving-time-of-56-h-.png'
     this.description_data['Exceeded accumulated two-week driving time of 90 h']='assets/Exceeded-accumulated-two-week-driving-time-of-90-h-.png'
+    this.description_data['Superato tempo di guida di due settimane accumulato oltre le  90 h']='assets/Exceeded-accumulated-two-week-driving-time-of-90-h-.png'
     this.description_data['Exceeded uninterrupted driving time of 4 h 30 min']='assets/Exceeded-uninterrupted-driving-time-of-4-h-30-min-.png'
+    this.description_data['Superato tempo di guida ininterrotto, oltre le 4 h 30 min']='assets/Exceeded-uninterrupted-driving-time-of-4-h-30-min-.png'
     this.description_data['Insufficient daily rest period of less than 11 h']='assets/Insufficient-daily-rest-period-of-less-than-11-h-.png'
+    this.description_data['Periodo di riposo giornaliero insufficiente inferiore a 11 h']='assets/Insufficient-daily-rest-period-of-less-than-11-h-.png'
     this.description_data['Insufficient reduced daily rest period of less than 9 h']='assets/Insufficient-reduced-daily-rest-period-of-less-than-9-h-.png'
+    this.description_data['Periodo di riposo giornaliero minimo ridotto inferiore di 9 h']='assets/Insufficient-reduced-daily-rest-period-of-less-than-9-h-.png'
     this.description_data['Insufficient split daily rest period of less than 3 h + 9h']='assets/Insufficient-split-daily-rest-period-of-less-than-3-h-9-h-.png'
+    this.description_data['Periodo di riposo giornaliero frazionato insufficiente inferiore a 3 h + 9 h']='assets/Insufficient-split-daily-rest-period-of-less-than-3-h-9-h-.png'
     this.description_data['Insufficient weekly rest period of less than 45 h']='assets/Insufficient-weekly-rest-period-of-less-than-45-h.png'
+    this.description_data['Periodo di risposo settimanale insufficiente inferiore a 45 h']='assets/Insufficient-weekly-rest-period-of-less-than-45-h.png'
     this.description_data['Insufficient reduced weekly rest period of less than 24 h']='assets/Insufficient-reduced-weekly-rest-period-of-less-than-24-h-.png'
+    this.description_data['Periodo di riposo settimanale minimo ridotto inferiore di 24 h']='assets/Insufficient-reduced-weekly-rest-period-of-less-than-24-h-.png'
     this.description_data['Insufficient daily rest period of less than 9 h for crew']='assets/Insufficient-reduced-daily-rest-period-of-less-than-9-h-.png'
+    this.description_data["Periodo di riposo giornaliero insufficiente inferiore a 9 h per l'equipaggio"]='assets/Insufficient-reduced-daily-rest-period-of-less-than-9-h-.png'
      
   }
 
@@ -251,7 +262,6 @@ description_data:any={}
     }
     
     openModal(e:any, modalTitle:any, modalText:any) {
-
       e.preventDefault();
       this.modalService.setRootViewContainerRef(this.viewContainerRef);
       this.modalService.addDynamicComponent(modalTitle, modalText);
