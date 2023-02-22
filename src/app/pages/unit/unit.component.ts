@@ -343,6 +343,6 @@ export class UnitComponent implements OnInit {
   }
 
   checkName(name:string){
-    return name.indexOf("_tacho_file.DDD")>=0
+    return (/.\DDD$/).test(name)
   }
 }

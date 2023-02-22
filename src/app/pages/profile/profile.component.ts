@@ -164,7 +164,6 @@ export class ProfileComponent implements OnInit {
     
      for (let [key1,value1] of driver_hash) {
           if(key1 in  driver_data ==false){
-          //  let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: dateTime > driver_hash.get(key1) ? 'gray' : 'red' }
             let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode:  'gray' }
             driver_data[key1] =new Array();
             driver_data[key1].push(data1)
