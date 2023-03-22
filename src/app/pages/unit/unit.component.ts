@@ -27,6 +27,8 @@ export class UnitComponent implements OnInit {
   unit_hash = new Map();
   unit_data: any = {};
   erro_count_hash = new Map();
+  countForInitialFile: boolean = false;
+  newArrayIndex: number = 0;
 
   constructor(public http: HttpClient, private sanitizer: DomSanitizer, private modalService: ModalService,
     private viewContainerRef: ViewContainerRef) {
@@ -175,7 +177,7 @@ export class UnitComponent implements OnInit {
         this.unit_data[unit_id].push(data1)
         // // unitData1.map(res => {
         // if (data1.name) {
-          // }
+        // }
         //   if (data1.name.split('.')[1] === 'ddd' || data1.name.split('.')[1] === "ddd") {
         //     console.log(data1);
         //   console.count();
@@ -231,17 +233,18 @@ export class UnitComponent implements OnInit {
         var d = new Date(dobj.mt * 1000);
 
         let cmonth = newdate.getMonth()
-
         if (d.getMonth() == cmonth && d.getDate() == newdate.getDate() && d.getFullYear() == newdate.getFullYear()) {
-          data1.filepresent = true;
-          data1.colorcode = 'green';
-          data1.name = dobj.name;
-          let d1 = new Date(dobj.mt * 1000);
-          data1.dates = String(d1.getDate()) + ' ' + String(d1.getMonth());
-          data1.filepresent = true;
-         
-          if (dobj.ct < maxdrive) {
-            maxdrive = dobj.ct;
+          if ((/tacho_file\.\DDD$/).test(dobj.name) || (/tacho_file\.ddd/).test(dobj.name)) { //for specific files by hammad
+            data1.filepresent = true;
+            data1.colorcode = 'green';
+            data1.name = dobj.name;
+            let d1 = new Date(dobj.mt * 1000);
+            data1.dates = String(d1.getDate()) + ' ' + String(d1.getMonth());
+            data1.filepresent = true;
+
+            if (dobj.ct < maxdrive) {
+              maxdrive = dobj.ct;
+            }
           }
 
         }
@@ -342,7 +345,24 @@ export class UnitComponent implements OnInit {
     }
   }
 
-  checkName(name:string){
-    return (/.\DDD$/).test(name)
+  checkName(name: string, i: number) {
+    let see = false;
+    if (this.newArrayIndex != i) {
+      this.newArrayIndex = i;
+      this.countForInitialFile = false;
+    }
+    if (((/tacho_file\.\DDD$/).test(name) || (/tacho_file\.\ddd$/).test(name)) && !this.countForInitialFile) {
+      see = (/tacho_file\.\DDD$/).test(name) ? true : ((/tacho_file\.\ddd$/).test(name) ? true : false);
+      this.countForInitialFile = true;
+    }
+
+    return see //edit the regular expression by hammad
+  }
+  checkForNewArray(i: number): boolean {
+    if (this.newArrayIndex != i) {
+      this.newArrayIndex = i;
+      this.countForInitialFile = false;
+    }
+    return this.countForInitialFile;
   }
 }

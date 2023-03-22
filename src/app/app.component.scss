@@ -169,3 +169,10 @@ header {
   display: block;
   z-index: 9999;
 }
+.lang-a{
+  color: black;
+  font-size: 15px;
+  &:hover{
+    text-decoration: none;
+  }
+}

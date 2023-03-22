@@ -53,10 +53,13 @@
     </thead>
     
     <tbody>
-      <tr *ngFor="let techo of techoGraphData">
+      <tr *ngFor="let techo of techoGraphData; let i = index">
         <td class="cursorname fixed" (click)="openModal($event, 'Hello Modal', techo)">{{techo.name}}</td>
         <td *ngFor="let techo1 of techo.data">
-          <div class="green" *ngIf="techo1.colorcode=='green' && checkName(techo1.name)" (click)="downloadFile(techo1.id,techo1.name)"></div>
+          <!-- <ng-container *ngIf="checkName(techo1.name,i)"></ng-container> -->
+          <!-- {{techo1.colorcode}} -->
+          <div class="green" *ngIf="techo1.colorcode=='green'" (click)="downloadFile(techo1.id,techo1.name)"></div>
+          <!-- <img src="../../../assets/grey_2.svg" alt="" *ngIf="(techo1.colorcode == 'green' || techo1.colorcode == 'nocolor') && !countForInitialFile" width="20"> -->
           <!-- <div class=" red" *ngIf="techo1.colorcode=='red'"></div> -->
           <img src="../../../assets/red_1.svg" alt="" *ngIf="techo1.colorcode=='red'" width="20">
           <!-- <div class=" gray" *ngIf="techo1.colorcode=='gray'"></div> -->
