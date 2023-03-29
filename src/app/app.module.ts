@@ -24,6 +24,16 @@ import { InfringementComponent } from './pages/infringement/infringement.compone
 import { CustomerComponent } from './pages/customer/customer.component';
 import { UnitComponent } from './pages/unit/unit.component';
 import { AutoFocusDirectiveDirective } from './auto-focus-directive.directive';
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
+// Factory function required during AOT compilation
+export function httpTranslateLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 @NgModule({
   declarations: [AppComponent, HomeComponent, ProfileComponent, AboutComponent, HelpComponent, NotFoundComponent,
     ModalComponent, InfringementComponent, CustomerComponent,UnitComponent,AutoFocusDirectiveDirective ],
@@ -32,9 +42,17 @@ import { AutoFocusDirectiveDirective } from './auto-focus-directive.directive';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatSelectModule,
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
+     TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     MatIconModule,
     MatDividerModule,
     CommonModule,

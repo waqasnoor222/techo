@@ -39,14 +39,14 @@
   <table>
     <thead style="background-color: #00beee"  border="1">
       <tr>
-        <th border="1"> </th>
-        <th *ngFor="let techo of header1Rev" [attr.colspan]="techo.count" style="text-align:center" border="1">{{techo.month}} - {{techo.year}}
+        <th border="1" style="z-index: 8;" class="fixed"> </th>
+        <th *ngFor="let techo of header1Rev" [attr.colspan]="techo.count" style="text-align:center" border="1">{{techo.month | translate}} - {{techo.year}}
         </th>
         <th>  SERIE DI "X" </th>
 
       </tr>
       <tr>
-        <th style="z-index: 8;" class="fixed">Vehicles</th>
+        <th style="z-index: 8;" class="fixed">{{'Vehicles' | translate}} </th>
         <th *ngFor="let techo of headerRev">{{techo}}</th>
         <th></th>
       </tr>

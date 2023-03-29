@@ -4,12 +4,12 @@
   <table [cellSpacing]="0">
     <thead>
       <tr>
-        <th> </th>
-        <th *ngFor="let techo of header1Rev" [attr.colspan]="techo.count" style="text-align:center">{{techo.month}} - {{techo.year}}
+        <th style="z-index: 99;" class="fixed"> </th>
+        <th *ngFor="let techo of header1Rev" [attr.colspan]="techo.count" style="text-align:center">{{techo.month  | translate}} - {{techo.year}}
         </th>
       </tr>
       <tr>
-        <th style="z-index: 99;" class="fixed">Driver Name </th>
+        <th style="z-index: 99;" class="fixed">{{'Driver Name' | translate}}  </th>
         <th *ngFor="let techo of headerRev">{{techo}}</th>
         <!-- <th></th> -->
       </tr>

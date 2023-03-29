@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row">
-        <h3 class="main-heading">CUSTOMER DOCUMENTS</h3>
+        <h3 class="main-heading"> {{'nav4' | translate}} </h3>
     </div>
         <form (ngSubmit)="onSubmit()" #customerForm="ngForm" name="customerForm">
             <div class="row">
                 <div class="col-md-6">
-                    <label for="account_name">Account name</label>
+                    <label for="account_name">{{'Account name' | translate}}</label>
                     <input type="text" id="account_name" name="account_name" class="form-control"
                     required [(ngModel)]="model.account_name" #account_name="ngModel" >
                     <div [hidden]="account_name.valid || account_name.pristine" class="mat-error">
@@ -15,7 +15,7 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <label for="company_name">Company name
+                    <label for="company_name"> {{'Company name' | translate}}
                     </label>
                     <input type="text" id="company_name" name="company_name"
                     required [(ngModel)]="model.company_name" #company_name="ngModel" class="form-control">
@@ -26,7 +26,7 @@
             </div>
                 <div class="row mt-2">
                     <div class="col-md-6">
-                        <label for="inspecter_name">Inspecter name</label>
+                        <label for="inspecter_name">{{'Inspecter name' | translate}}</label>
                         <input type="text" id="inspecter_name" name="inspecter_name"
                         required [(ngModel)]="model.inspecter_name" #inspecter_name="ngModel" class="form-control">
                         <div [hidden]="inspecter_name.valid || inspecter_name.pristine" class="mat-error">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="site_name">Site Name</label>
+                        <label for="site_name">{{'Site Name' | translate}} </label>
                         <input type="text" id="site_name"  name="site_name"
                         required [(ngModel)]="model.site_name" #site_name="ngModel" class="form-control">
                         <div [hidden]="site_name.valid || site_name.pristine" class="mat-error">
@@ -46,7 +46,7 @@
                 <div class="row">
                     <div class="col-md-12 text-right">
                         <!-- <button ng-click="submit()" [disabled]="!customerForm.form.valid">Submit</button> customerForm.reset() -->
-                        <button class="ct-btn" mat-raised-button type="button"   [disabled]="!customerForm.form.valid" (click)="newCustomer(); ">Submit</button>
+                        <button class="ct-btn" mat-raised-button type="button"   [disabled]="!customerForm.form.valid" (click)="newCustomer(); ">{{'Submit' | translate}} </button>
                     </div>
                 </div>
             

@@ -176,3 +176,11 @@ header {
     text-decoration: none;
   }
 }
+.lang-select{
+  font-size: 17px;
+  border: 0;
+  cursor: pointer;
+  .items{
+    padding: 100px;
+  }
+}

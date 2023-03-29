@@ -9,24 +9,28 @@
         <div class="col-md-3 col-sm-6 col-6">
           <img class="logo" alt="Logo" src="../assets/logo-top.png" />
         </div>
-        <div class="offset-md-6 col-md-1 col-sm-1 col-1 offset-sm-0">
+        <div class="offset-md-6 col-md-1 col-sm-1 col-1 offset-sm-0 text-right">
           <div class="dropdown">
             <img onclick="myFunction()" class="dropbtn" src="../assets/novo.svg" alt="">
             <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
             <div id="myDropdown" class="dropdown-content">
-              <a routerLink="/customer" [routerLinkActive]="['nav-active']"> <i class="fa fa-book"></i> Customer
-                Documents</a>
+              <a class="text-center" routerLink="/customer" [routerLinkActive]="['nav-active']"> <i class="fa fa-book"></i> {{'nav4' | translate}}</a>
             </div>
           </div>
         </div>
         <div class="col-md-1">
-          <a href="" class="lang-a">Italian</a>
+          <!-- <a href="" class="lang-a">Italian</a> -->
+        <select class="lang-select" #selLang (change)="translateLanguageTo(selLang.value)">
+            <option class="items" *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+          </select>
+    
         </div>
       </div>
     </div>
   </header>
 </mat-toolbar>
-
+<!-- <h1>{{'TITLE' | translate}}</h1>
+<h1>{{'TITLE' | translate}}</h1> -->
 <mat-sidenav-container id="left-tb-1">
   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8 side-menu">
     <img class="side-logo" src="../assets/techo-new.png" />
@@ -37,19 +41,16 @@
         <a routerLink="/home" [routerLinkActive]="['nav-active']"> <i class="fa fa-credit-card"></i> Monthly </a>
       </li> -->
       <li>
-        <a routerLink="/monthly" [routerLinkActive]="['nav-active']"><i class="fa fa-credit-card"></i> Driver Card
-          Download</a>
+        <a routerLink="/monthly" [routerLinkActive]="['nav-active']"><i class="fa fa-credit-card"></i> {{'nav1' | translate}}</a>
       </li>
 
 
 
       <li>
-        <a routerLink="/infringement" [routerLinkActive]="['nav-active']"> <i class="fa fa-envelope"></i> Driver
-          Infringement Letter</a>
+        <a routerLink="/infringement" [routerLinkActive]="['nav-active']"> <i class="fa fa-envelope"></i> {{'nav2' | translate}}</a>
       </li>
       <li>
-        <a routerLink="/unit" [routerLinkActive]="['nav-active']"><i class="fa fa-download"></i> Techograph data
-          Download</a>
+        <a routerLink="/unit" [routerLinkActive]="['nav-active']"><i class="fa fa-download"></i> {{'nav3' | translate}}</a>
       </li>
 
     </ul>

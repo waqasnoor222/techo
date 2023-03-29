@@ -72,6 +72,7 @@ export class ProfileComponent implements OnInit {
   doProcessData(drvrs: any, fileDetails: any) {
     let sessionID = this.sessionID;
     var monthName = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    // var monthName = new Array("January1", "February1", "March1", "April1", "May1", "June1", "July1", "August1", "September1", "October1", "November1", "December1");
 
     /***
      * 
